@@ -1,0 +1,61 @@
+<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+
+  <!-- <button type="button" style="margin-top: 60px" (click)="onToggle()"
+[ngClass]="[btnStyle]"
+>add New Block</button>
+<br>
+<br> -->
+
+  <!-- <div *ngIf="newBlock" class="container">
+    <h1>Add new Block</h1>
+
+    <form [formGroup]="newblockForm" (ngSubmit)="onNewForm()">
+      <div class="form-group">
+        <label for="name">Block Name</label>
+        <input type="text" class="form-control" id="name" formControlName="name" required ngModel />
+      </div>
+
+      <div class="form-group">
+        <label for="alterEgo">Location</label>
+        <input type="text" class="form-control" id="alterEgo" formControlName="location" ngModel />
+      </div>
+      <button type="submit" class="btn btn-success">Submit</button>
+    </form>
+  </div> -->
+  <!-- <div class="row">
+    <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+      <router-outlet></router-outlet>
+    </div>
+  </div> -->
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="">
+        <ul class="nav nav-sidebar">
+          <li class="active"><a routerLink="/blocks" class="label label-primary">Blocks List</a></li>
+          <li><a routerLink="/blocks/add"  class="label label-info"> Add new </a></li>
+          <!-- <li><a href="#">Analytics</a></li> -->
+          <!-- <li><a href="#">Export</a></li> -->
+        </ul>
+      </div>
+    </div>
+  </div>
+  <br>
+
+  <div class="container" style="width: 60%;">
+    <h1>Block List</h1>
+    <div class="container">
+      <div class="row" id="whole">
+        <div class="row">
+          <!-- [routerLink]="['/blocks','edit', block.id]"  //display the user block -->
+          <app-block [routerLink]="['/user',block.blockId]" 
+          *ngFor="let block of blocks" [block]="block"></app-block>
+
+          <!-- <router-outlet></router-outlet> -->
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- <router-outlet></router-outlet> -->

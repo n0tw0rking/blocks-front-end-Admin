@@ -1,0 +1,48 @@
+<!-- <app-nav-bar></app-nav-bar> -->
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="">
+      <ul class="nav nav-sidebar">
+        <li class="active"><a routerLink="/user" class="label label-primary">Users List</a></li>
+        <li><a routerLink="/user/add"  class="label label-info"> Add new </a></li>
+        <!-- <li><a href="#">Analytics</a></li> -->
+        <!-- <li><a href="#">Export</a></li> -->
+      </ul>
+    </div>
+  </div>
+</div>
+<br>
+
+<table class="table" style="color: rgb(59, 37, 37);">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">service</th>
+      <th scope="col">amount</th>
+      <th scope="col">Username</th>
+      <th scope="col">Subscription Id</th>
+      <th scope="col">Balance</th>
+    </tr>
+  </thead>
+
+  <tbody *ngFor="let user of users">
+    <tr>
+      <th scope="row">{{user.subscription.user.userId }}</th>
+      <td>{{ user.subscription.user.email }}</td>
+      <div>
+        <td> - </td>
+      </div>
+      <div>
+        <td>{{ user.subscription.user.userId}}</td>
+      </div>
+      <div></div>
+      <td>{{ user.subscription.user.email}}</td>
+      <td>{{user.subscriptionId}}</td>
+   
+        <td (click)="userMoreInfo(user)" ><button type="button" class="btn btn-primary btn-sm">More Info</button>
+        </td> 
+        <!-- routerLink="/userRercords" -->
+      </tr>
+    </tbody>
+    

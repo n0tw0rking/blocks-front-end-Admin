@@ -1,0 +1,98 @@
+#Copy and paste the queries to test ASP graphql backend
+{
+  query: usersWithSubs {
+    email
+    subscriptions {
+      subscriptionName
+    }
+  }
+
+{
+  query($userId: Number!): user(userId: $userId) {
+    email
+    phoneNumber
+    blockUsers {
+      blockId
+    }
+    subscriptions {
+      subscriptionId
+      subscriptionName
+      user {
+        userId
+      }
+    }
+  }
+}
+# This is getUser qurey for the ASP backend
+query($id: String!) {
+          oneUser(id: $id) {
+            _id
+            isAdmin
+            isSuperAdmin
+            email
+            password
+            userSubscription {
+              _id
+              name
+              user {
+                _id
+              }
+              block {
+                _id
+                name
+                location
+              }
+            }
+          }
+        }
+#
+{
+  blockServices(blockId:1){
+  blockName,
+    blockSubscriptions{
+        subscription{
+          aServiceSubscriptions{
+            service{
+                serviceName
+            }
+         }
+      }
+    }
+  }
+}
+query($id: String!) {
+  oneUser(id: $id) {
+    _id
+    isAdmin
+    isSuperAdmin
+    email
+    password
+    userSubscription {
+      _id
+      name
+      user {
+        _id
+      }
+      block {
+        _id
+        name
+        location
+      }
+    }
+  }
+}
+# To get all blocks with subscriptions by admin user id use this :
+{
+  blocksForAdmin(adminUserId:13){
+  blockName,
+  blockSubscriptions{
+    subscription{
+      subscriptionName,
+      user{
+        email
+      }
+    }
+  }
+}
+}
+}

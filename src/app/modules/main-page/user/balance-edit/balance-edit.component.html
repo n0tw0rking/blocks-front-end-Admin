@@ -1,0 +1,42 @@
+<br>
+
+<h3>{{email}}</h3>
+<div>
+  <ul class="list-group">
+    <li class="list-group-item text-muted">Activity <i class="fa fa-dashboard fa-1x"></i></li>
+    <li class="list-group-item text-right"><span class="pull-left"><strong>Blocks</strong></span> 2</li>
+    <li class="list-group-item text-right"><span class="pull-left"><strong>Services</strong></span> 13</li>
+    <li class="list-group-item text-right"><span class="pull-left"><strong>Dept</strong></span> -37 T.D</li>
+    <li class="list-group-item text-right"><span class="pull-left"><strong>Depost</strong></span> +70 T.D</li>
+  </ul>
+</div>
+<br>
+<table class="table" style="color: rgb(236, 25, 25);">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Email</th>
+      <th scope="col">Balance</th>
+      <th scope="col">Username</th>
+      <th scope="col">Subscription Id</th>
+      <th scope="col">Balance</th>
+    </tr>
+  </thead>
+
+  <tbody *ngFor="let user of users">
+    <tr>
+      <th scope="row">id</th>
+        <td>email}</td>
+      <div>
+        <td> - </td>
+      </div>
+      <div>
+        <td>user id</td>
+      </div>
+      <div>
+         <td>sub id</td>
+      </div>   
+        <!-- <td (click)="userMoreInfo(user)" ><button type="button" class="btn btn-primary btn-sm">More Info</button>
+         </td>  -->
+      </tr>
+    </tbody>

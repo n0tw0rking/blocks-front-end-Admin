@@ -1,0 +1,23 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "outDir": "./out-tsc/app",
+    "types": ["node", "webgl2", "offscreencanvas"]
+  },
+  "include": [
+    "src/**/*.ts"
+  ],
+  "exclude": [
+    "src/test.ts",
+    "src/**/*.spec.ts"
+  ],
+  "app": [{
+    "scripts": [
+      "../node_modules/tween.js/src/Tween.js",
+      "../node_modules/three/build/three.js",
+      "../node_modules/stats.js/build/stats.min.js",
+      "../vendor/VRMLLoader.js",
+      "../vendor/OrbitControls.js"
+    ],
+  }]
+}

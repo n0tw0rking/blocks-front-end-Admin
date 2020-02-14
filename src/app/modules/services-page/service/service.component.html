@@ -1,0 +1,63 @@
+<div class="col-md-8 d-inline-block" style="margin-left:60% ;">
+  <div class="card">
+    <div class="card-body">
+      <h4 class="card-title text-center">
+        <strong>{{ service.serviceName }}</strong>
+      </h4>
+      <p class="card-text text-center">
+        With supporting text below as a natural lead-in to additional content.
+      </p>
+      <p class="card-text">Price: 100$</p>
+      <p class="card-text" *ngIf="service.isActive;else kay">Status: Enabled</p>
+      <ng-template #kay>
+        <p class="card-text">Status: Disabled</p>
+      </ng-template>
+      <!-- <p class="card-text" *ngIf="!service.isActive">Status: Disabled</p> -->
+    </div>
+    <div class="text-center" *ngIf="loading">
+      <div class="spinner-border" role="status">
+        <span class="sr-only">Loading...</span>
+      </div>
+    </div>
+    <button _ngcontent-c4="" type="button" [class]="
+        !service.isActive
+          ? 'btn btn-success btn-round'
+          : 'btn btn-danger btn-round'
+      ">
+      <p class="text-center" *ngIf="!service.isActive" (click)="updateService(service.aServiceId, true)">
+        Enable
+      </p>
+      <p class="text-center" *ngIf="service.isActive" (click)="updateService(service.aServiceId, false)">
+        Disable
+      </p>
+    </button>
+
+    <!-- PREVIOS BUTTON STYLE -->
+    <!-- <div style="text-align: center;">
+        <button
+          type="button"
+          class="btn btn-info btn-circle btn-xl"
+          (click)="updateService(service.aServiceId, true)"
+        >
+          <i class="fa fa-check"></i>
+        </button>
+        <button
+          type="button"
+          class="btn btn-warning btn-circle btn-xl"
+          (click)="updateService(service.aServiceId, false)"
+        >
+          <i class="fa fa-times"></i>
+        </button>
+        <div class="" *ngIf="Loading">
+          <div
+            class="spinner-grow"
+            style="width: 1rem; height: 1rem;"
+            role="status"
+          >
+            <span class="sr-only">Loading...</span>
+          </div>
+        </div>
+      </div> -->
+    <!-- </div> -->
+  </div>
+</div>

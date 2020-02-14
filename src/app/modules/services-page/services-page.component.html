@@ -1,0 +1,20 @@
+  <div *ngIf="error">
+    <h2 class="text-center">
+      {{error}}
+
+    </h2>
+  </div>
+  <div *ngIf="services.length">
+    <div class="row">
+      <app-service *ngFor="let service of services; let i = index" [index]="i" [service]="service"
+        (ServciceEvent)="updateParent($event)">
+      </app-service>
+    </div>
+  </div>
+
+  <div class="text-center" *ngIf="!services.length && !error" style="vertical-align: middle;">
+    <div class="spinner-grow" style="width: 20rem; height: 20rem; text-align: center;" role="status">
+      <span class="sr-only">Loading...</span>
+    </div>
+
+  </div>
